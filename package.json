@@ -13,6 +13,6 @@
   },
   "homepage": "https://github.com/uniho/babel-plugin-stylis-css-in-js.git",
   "dependencies": {
-		"stylis": "^4.0.10"
-	}
+    "stylis": "^4.0.10"
+  }
 }
