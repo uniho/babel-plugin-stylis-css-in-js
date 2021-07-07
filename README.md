@@ -186,3 +186,9 @@ In `.babelrc`, etc. :
 ## License
 
 MIT
+
+[npm-image]: https://img.shields.io/npm/v/babel-plugin-stylis-css-in-js.svg
+[npm-url]: https://npmjs.org/package/babel-plugin-stylis-css-in-js
+[downloads-image]: https://img.shields.io/npm/dm/babel-plugin-stylis-css-in-js.svg
+[downloads-url]: https://npmjs.org/package/babel-plugin-stylis-css-in-js
+[license-image]: https://badgen.net/badge/license/MIT/blue
