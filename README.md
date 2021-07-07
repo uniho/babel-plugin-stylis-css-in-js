@@ -38,7 +38,8 @@ require('babel-core').transform(yourCode, {
 
 If you have souces...
 
-```index.html
+index.html:
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -57,7 +58,8 @@ If you have souces...
 </html>
 ```
 
-```index.js
+index.js:
+```js
 
 //
 window.css = String.raw;
