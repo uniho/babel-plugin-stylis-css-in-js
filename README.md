@@ -155,7 +155,7 @@ const newCSS = css`
 ︙
 ```
 
-Awosame!
+Awosame🦈? Awesome!
 
 ## Options
 
