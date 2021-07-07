@@ -36,7 +36,7 @@ require('babel-core').transform(yourCode, {
 
 ## Example
 
-If you have souces...
+If you have sources or sausages...
 
 index.html:
 ```html
