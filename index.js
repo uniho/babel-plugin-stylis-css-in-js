@@ -5,8 +5,8 @@ const expressionMark = '--________stylis_it________';
 module.exports = babel => {
   return {
     visitor: {
-			TaggedTemplateExpression(path, state) {
-				const tag = path.get('tag');
+      TaggedTemplateExpression(path, state) {
+        const tag = path.get('tag');
         const tagName = tag.isIdentifier() ? tag.node.name : 
           (tag.isCallExpression() ? tag.node.callee.name : 
           (tag.isMemberExpression() ? tag.node.property.name : false));
@@ -71,7 +71,7 @@ module.exports = babel => {
           //path.skip();
           
         } // end of if (tagName === 'css')
-			}
+      }
     }
   }
 }
