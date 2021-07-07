@@ -131,7 +131,7 @@ const myCSS = css`
 `;
 
 //
-injectGlobal(newCSS);
+injectGlobal(myCSS);
 
 // 
 const MyApp = props =>
