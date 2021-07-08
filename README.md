@@ -65,7 +65,7 @@ index.js:
 //
 window.css = String.raw;
 
-// like the emotion
+// like the emotion(https://emotion.sh/docs/@emotion/css#global-styles)
 const injectGlobal = source => {
   const bin = stylis.compile(source);
   const plugins = [stylis.stringify];
