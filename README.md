@@ -148,7 +148,7 @@ Let's babel index.js...
 ```js
 ︙
 
-const newCSS = css`
+const myCSS = css`
 .my-page{margin:${margin};}.my-page button{cursor:pointer;background-image:none;background-size:0;background-repeat:no-repeat;background-position:50% 50%;padding:10px 20px;font-family:Roboto;border:0;border-radius:2px;box-shadow:0 2px 5px 0 rgba(0,0,0,.14),0 2px 10px 0 rgba(0,0,0,.1);background-color:${buttonBackgroundColor};color:${buttonColor};transition:background-color .3s ease-out;will-change:background-color;}.my-page button:hover{${isTouchDevice ? '' : css`background-color:black;color:red;`}}.my-page button:active,.my-page button:active:hover{box-shadow:none;}
 `;
 
