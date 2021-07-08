@@ -53,6 +53,7 @@ index.html:
 
   <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/stylis@4/dist/umd/stylis.js"></script>
  
   <script src="index.js"></script>
 </html>
@@ -65,7 +66,10 @@ index.js:
 window.css = String.raw;
 
 // like the emotion
-const injectGlobal = text => {
+const injectGlobal = source => {
+  const bin = stylis.compile(source);
+  const plugins = [stylis.stringify];
+  const text = stylis.serialize(bin, stylis.middleware(plugins));
   const nodes = document.querySelectorAll('style[data-stylis]');
   let css = Array.prototype.find.call(nodes, node => node.getAttribute('data-stylis') === '0'); // 
   if (!css) {
@@ -115,17 +119,17 @@ const myCSS = css`
       color: ${buttonColor};
       transition: background-color .3s ease-out;
       will-change: background-color;
-    }
 
-    button:hover {
-      ${isTouchDevice ? '' : css`
-        background-color: black;
-        color: red;
-      `}
-    }
+      &:hover {
+        ${isTouchDevice ? '' : css`
+          background-color: black;
+          color: red;
+        `}
+      }
     
-    button:active, button:active:hover {
-      box-shadow: none;
+      &:active, &:active:hover {
+        box-shadow: none;
+      }
     }
   }
 `;
@@ -148,9 +152,7 @@ Let's babel index.js...
 ```js
 ︙
 
-const myCSS = css`
-.my-page{margin:${margin};}.my-page button{cursor:pointer;background-image:none;background-size:0;background-repeat:no-repeat;background-position:50% 50%;padding:10px 20px;font-family:Roboto;border:0;border-radius:2px;box-shadow:0 2px 5px 0 rgba(0,0,0,.14),0 2px 10px 0 rgba(0,0,0,.1);background-color:${buttonBackgroundColor};color:${buttonColor};transition:background-color .3s ease-out;will-change:background-color;}.my-page button:hover{${isTouchDevice ? '' : css`background-color:black;color:red;`}}.my-page button:active,.my-page button:active:hover{box-shadow:none;}
-`;
+const myCSS = css`.my-page{margin:${margin};}.my-page button{cursor:pointer;background-image:none;background-size:0;background-repeat:no-repeat;background-position:50% 50%;padding:10px 20px;font-family:Roboto;border:0;border-radius:2px;box-shadow:0 2px 5px 0 rgba(0,0,0,.14),0 2px 10px 0 rgba(0,0,0,.1);background-color:${buttonBackgroundColor};color:${buttonColor};transition:background-color .3s ease-out;will-change:background-color;}.my-page button:hover{${isTouchDevice ? '' : css`background-color:black;color:red;`}}.my-page button:active,.my-page button:active:hover{box-shadow:none;}`;
 
 ︙
 ```
