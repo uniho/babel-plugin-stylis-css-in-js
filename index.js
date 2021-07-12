@@ -70,7 +70,7 @@ module.exports = babel => {
 
           //path.skip();
           
-        } // end of if (tagName === 'css')
+        } // end of if (optTags.includes(tagName))
       }
     }
   }
